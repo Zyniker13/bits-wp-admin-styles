@@ -10,10 +10,10 @@
  * Author URI: https://bristleconeit.com
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: bristlecone-admin-style
+ * Text Domain: bristlecone-admin-styles
  * Domain Path: /languages
  *
- * @package BristleconeAdminStyle
+ * @package BristleconeAdminStyles
  */
 
 declare(strict_types=1);
@@ -22,26 +22,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BRISTLECONE_ADMIN_STYLE_VERSION', '1.0.0' );
-define( 'BRISTLECONE_ADMIN_STYLE_FILE', __FILE__ );
-define( 'BRISTLECONE_ADMIN_STYLE_DIR', plugin_dir_path( __FILE__ ) );
-define( 'BRISTLECONE_ADMIN_STYLE_URL', plugin_dir_url( __FILE__ ) );
+define( 'BRISTLECONE_ADMIN_STYLES_VERSION', '1.0.0' );
+define( 'BRISTLECONE_ADMIN_STYLES_FILE', __FILE__ );
+define( 'BRISTLECONE_ADMIN_STYLES_DIR', plugin_dir_path( __FILE__ ) );
+define( 'BRISTLECONE_ADMIN_STYLES_URL', plugin_dir_url( __FILE__ ) );
 
-require_once BRISTLECONE_ADMIN_STYLE_DIR . 'includes/Fonts.php';
-require_once BRISTLECONE_ADMIN_STYLE_DIR . 'includes/Settings.php';
-require_once BRISTLECONE_ADMIN_STYLE_DIR . 'includes/Assets.php';
-require_once BRISTLECONE_ADMIN_STYLE_DIR . 'includes/Plugin.php';
+require_once BRISTLECONE_ADMIN_STYLES_DIR . 'includes/Fonts.php';
+require_once BRISTLECONE_ADMIN_STYLES_DIR . 'includes/Settings.php';
+require_once BRISTLECONE_ADMIN_STYLES_DIR . 'includes/Assets.php';
+require_once BRISTLECONE_ADMIN_STYLES_DIR . 'includes/Plugin.php';
 
 add_action(
 	'plugins_loaded',
 	static function (): void {
-		\Bristlecone\AdminStyle\Plugin::instance()->init();
+		\Bristlecone\AdminStyles\Plugin::instance()->init();
 	}
 );
 
 register_activation_hook(
 	__FILE__,
 	static function (): void {
-		\Bristlecone\AdminStyle\Plugin::instance()->activate();
+		\Bristlecone\AdminStyles\Plugin::instance()->activate();
 	}
 );

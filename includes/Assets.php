@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Bristlecone\AdminStyle;
+namespace Bristlecone\AdminStyles;
 
 /**
  * Admin CSS enqueue. v1 is gated to the posts list table.
  *
- * @package BristleconeAdminStyle
+ * @package BristleconeAdminStyles
  */
 final class Assets {
 
@@ -49,18 +49,18 @@ final class Assets {
 		if ( Fonts::is_webfont( $family ) ) {
 			wp_enqueue_style(
 				Fonts::HANDLE_FONTS,
-				BRISTLECONE_ADMIN_STYLE_URL . 'assets/css/fonts.css',
+				BRISTLECONE_ADMIN_STYLES_URL . 'assets/css/fonts.css',
 				array(),
-				BRISTLECONE_ADMIN_STYLE_VERSION
+				BRISTLECONE_ADMIN_STYLES_VERSION
 			);
 			$deps[] = Fonts::HANDLE_FONTS;
 		}
 
 		wp_enqueue_style(
 			Fonts::HANDLE_LIST,
-			BRISTLECONE_ADMIN_STYLE_URL . 'assets/css/admin-list-fonts.css',
+			BRISTLECONE_ADMIN_STYLES_URL . 'assets/css/admin-list-fonts.css',
 			$deps,
-			BRISTLECONE_ADMIN_STYLE_VERSION
+			BRISTLECONE_ADMIN_STYLES_VERSION
 		);
 
 		// Stack comes from the PHP allowlist, never from user-supplied CSS.

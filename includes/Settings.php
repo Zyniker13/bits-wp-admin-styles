@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Bristlecone\AdminStyle;
+namespace Bristlecone\AdminStyles;
 
 /**
  * Settings API, Bristlecone menu, and option sanitization.
  *
- * @package BristleconeAdminStyle
+ * @package BristleconeAdminStyles
  */
 final class Settings {
 
-	public const OPTION      = 'bristlecone_admin_style_settings';
-	public const GROUP       = 'bristlecone_admin_style';
+	public const OPTION      = 'bristlecone_admin_styles_settings';
+	public const GROUP       = 'bristlecone_admin_styles';
 	public const PARENT_SLUG = 'bristlecone';
-	public const PAGE_SLUG   = 'bristlecone-admin-style';
+	public const PAGE_SLUG   = 'bristlecone-admin-styles';
 
 	/**
 	 * v1 application target: Posts → All Posts (screen id edit-post).
@@ -153,8 +153,8 @@ final class Settings {
 
 		if ( empty( $GLOBALS['admin_page_hooks'][ $parent_slug ] ) ) {
 			add_menu_page(
-				__( 'Bristlecone', 'bristlecone-admin-style' ),
-				__( 'Bristlecone', 'bristlecone-admin-style' ),
+				__( 'Bristlecone', 'bristlecone-admin-styles' ),
+				__( 'Bristlecone', 'bristlecone-admin-styles' ),
 				'manage_options',
 				$parent_slug,
 				// Page callbacks run after admin chrome is printed, so a
@@ -169,8 +169,8 @@ final class Settings {
 
 		add_submenu_page(
 			$parent_slug,
-			__( 'Bristlecone Admin Styles', 'bristlecone-admin-style' ),
-			__( 'Admin Styles', 'bristlecone-admin-style' ),
+			__( 'Bristlecone Admin Styles', 'bristlecone-admin-styles' ),
+			__( 'Admin Styles', 'bristlecone-admin-styles' ),
 			'manage_options',
 			self::PAGE_SLUG,
 			array( $this, 'render_page' )
@@ -262,8 +262,8 @@ final class Settings {
 		$choices  = Fonts::choices();
 		?>
 		<div class="wrap">
-			<h1><?php echo esc_html__( 'Bristlecone Admin Styles', 'bristlecone-admin-style' ); ?></h1>
-			<p><?php echo esc_html__( 'Curated fonts for dense admin list tables. Custom fonts are off by default. Monospace and the bundled faces make title, slug, and date columns easier to scan on All Posts. Other admin screens keep WordPress core fonts until a later release.', 'bristlecone-admin-style' ); ?></p>
+			<h1><?php echo esc_html__( 'Bristlecone Admin Styles', 'bristlecone-admin-styles' ); ?></h1>
+			<p><?php echo esc_html__( 'Curated fonts for dense admin list tables. Custom fonts are off by default. Monospace and the bundled faces make title, slug, and date columns easier to scan on All Posts. Other admin screens keep WordPress core fonts until a later release.', 'bristlecone-admin-styles' ); ?></p>
 
 			<form action="options.php" method="post">
 				<?php settings_fields( self::GROUP ); ?>
@@ -272,31 +272,31 @@ final class Settings {
 				<?php endforeach; ?>
 				<table class="form-table" role="presentation">
 					<tr>
-						<th scope="row"><?php echo esc_html__( 'Enable custom admin fonts', 'bristlecone-admin-style' ); ?></th>
+						<th scope="row"><?php echo esc_html__( 'Enable custom admin fonts', 'bristlecone-admin-styles' ); ?></th>
 						<td>
 							<label>
 								<input type="checkbox" name="<?php echo esc_attr( self::OPTION ); ?>[enabled]" value="1" <?php checked( $settings['enabled'] ); ?> />
-								<?php echo esc_html__( 'Apply the selected font family on enabled admin screens', 'bristlecone-admin-style' ); ?>
+								<?php echo esc_html__( 'Apply the selected font family on enabled admin screens', 'bristlecone-admin-styles' ); ?>
 							</label>
-							<p class="description"><?php echo esc_html__( 'When this is off, no admin font CSS is loaded.', 'bristlecone-admin-style' ); ?></p>
+							<p class="description"><?php echo esc_html__( 'When this is off, no admin font CSS is loaded.', 'bristlecone-admin-styles' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><label for="bristlecone-admin-style-font-family"><?php echo esc_html__( 'Font family', 'bristlecone-admin-style' ); ?></label></th>
+						<th scope="row"><label for="bristlecone-admin-styles-font-family"><?php echo esc_html__( 'Font family', 'bristlecone-admin-styles' ); ?></label></th>
 						<td>
-							<select id="bristlecone-admin-style-font-family" name="<?php echo esc_attr( self::OPTION ); ?>[font_family]">
+							<select id="bristlecone-admin-styles-font-family" name="<?php echo esc_attr( self::OPTION ); ?>[font_family]">
 								<?php foreach ( $choices as $key => $label ) : ?>
 									<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $settings['font_family'], $key ); ?>><?php echo esc_html( $label ); ?></option>
 								<?php endforeach; ?>
 							</select>
-							<p class="description"><?php echo esc_html__( 'Allowlisted presets only. Bundled webfonts are served from this plugin (no third-party CDN). System default leaves WordPress core fonts in place even if custom fonts are enabled.', 'bristlecone-admin-style' ); ?></p>
+							<p class="description"><?php echo esc_html__( 'Allowlisted presets only. Bundled webfonts are served from this plugin (no third-party CDN). System default leaves WordPress core fonts in place even if custom fonts are enabled.', 'bristlecone-admin-styles' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><?php echo esc_html__( 'Apply to', 'bristlecone-admin-style' ); ?></th>
+						<th scope="row"><?php echo esc_html__( 'Apply to', 'bristlecone-admin-styles' ); ?></th>
 						<td>
-							<p><strong><?php echo esc_html__( 'Posts → All Posts', 'bristlecone-admin-style' ); ?></strong></p>
-							<p class="description"><?php echo esc_html__( 'v1 applies only to the posts list table. The saved settings include a scopes list (currently edit-post) so more /wp-admin/ screens can be added later without changing the option shape.', 'bristlecone-admin-style' ); ?></p>
+							<p><strong><?php echo esc_html__( 'Posts → All Posts', 'bristlecone-admin-styles' ); ?></strong></p>
+							<p class="description"><?php echo esc_html__( 'v1 applies only to the posts list table. The saved settings include a scopes list (currently edit-post) so more /wp-admin/ screens can be added later without changing the option shape.', 'bristlecone-admin-styles' ); ?></p>
 						</td>
 					</tr>
 				</table>

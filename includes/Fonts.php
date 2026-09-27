@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Bristlecone\AdminStyle;
+namespace Bristlecone\AdminStyles;
 
 /**
  * Allowlisted font families. Keys are stored; CSS stacks are mapped in PHP.
  *
  * Never accept free-text CSS from the user.
  *
- * @package BristleconeAdminStyle
+ * @package BristleconeAdminStyles
  */
 final class Fonts {
 
@@ -20,8 +20,8 @@ final class Fonts {
 	public const KEY_IBM_PLEX_SANS  = 'ibm-plex-sans';
 	public const KEY_IBM_PLEX_MONO  = 'ibm-plex-mono';
 
-	public const HANDLE_LIST  = 'bristlecone-admin-style-list';
-	public const HANDLE_FONTS = 'bristlecone-admin-style-fonts';
+	public const HANDLE_LIST  = 'bristlecone-admin-styles-list';
+	public const HANDLE_FONTS = 'bristlecone-admin-styles-fonts';
 
 	/**
 	 * System UI stack used as a sans fallback for bundled webfonts.
@@ -76,12 +76,12 @@ final class Fonts {
 	 */
 	public static function choices(): array {
 		return array(
-			self::KEY_DEFAULT       => __( 'System default (no override)', 'bristlecone-admin-style' ),
-			self::KEY_MONOSPACE     => __( 'System monospace', 'bristlecone-admin-style' ),
-			self::KEY_INTER         => __( 'Inter (bundled)', 'bristlecone-admin-style' ),
-			self::KEY_SOURCE_SANS_3 => __( 'Source Sans 3 (bundled)', 'bristlecone-admin-style' ),
-			self::KEY_IBM_PLEX_SANS => __( 'IBM Plex Sans (bundled)', 'bristlecone-admin-style' ),
-			self::KEY_IBM_PLEX_MONO => __( 'IBM Plex Mono (bundled)', 'bristlecone-admin-style' ),
+			self::KEY_DEFAULT       => __( 'System default (no override)', 'bristlecone-admin-styles' ),
+			self::KEY_MONOSPACE     => __( 'System monospace', 'bristlecone-admin-styles' ),
+			self::KEY_INTER         => __( 'Inter (bundled)', 'bristlecone-admin-styles' ),
+			self::KEY_SOURCE_SANS_3 => __( 'Source Sans 3 (bundled)', 'bristlecone-admin-styles' ),
+			self::KEY_IBM_PLEX_SANS => __( 'IBM Plex Sans (bundled)', 'bristlecone-admin-styles' ),
+			self::KEY_IBM_PLEX_MONO => __( 'IBM Plex Mono (bundled)', 'bristlecone-admin-styles' ),
 		);
 	}
 

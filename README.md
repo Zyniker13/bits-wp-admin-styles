@@ -6,7 +6,7 @@ Plugin homepage: [https://bristleconeit.com/bristlecone-admin-styles/](https://b
 
 Development repository: [https://github.com/Zyniker13/bits-wp-admin-styles](https://github.com/Zyniker13/bits-wp-admin-styles).
 
-The GitHub repo is `bits-wp-admin-styles`. The plugin folder / text domain / bootstrap slug is `bristlecone-admin-style` (singular), matching the bits-markdown pattern.
+The GitHub repo is `bits-wp-admin-styles`. The plugin folder / text domain / bootstrap slug is `bristlecone-admin-styles` (plural).
 
 ## Requirements
 
@@ -15,7 +15,7 @@ The GitHub repo is `bits-wp-admin-styles`. The plugin folder / text domain / boo
 
 ## Install
 
-1. Copy this directory into `wp-content/plugins/` (folder name can stay `bits-wp-admin-styles` or be `bristlecone-admin-style`).
+1. Copy this directory into `wp-content/plugins/` (folder name can stay `bits-wp-admin-styles` or be `bristlecone-admin-styles`).
 2. Activate **Bristlecone Admin Styles**.
 3. Open **Bristlecone → Admin Styles**.
 4. Enable custom admin fonts and choose a family. The default is **off**.
@@ -32,7 +32,7 @@ When enabled and the family is not “System default”, the plugin enqueues CSS
 - The front end
 - The admin menu or admin bar
 
-The option `bristlecone_admin_style_settings` stores `{ enabled, font_family, scopes }`. `scopes` defaults to `['edit-post']` and is the expansion point for later `/wp-admin/` coverage. Do not treat that list as permanently one screen.
+The option `bristlecone_admin_styles_settings` stores `{ enabled, font_family, scopes }`. `scopes` defaults to `['edit-post']` and is the expansion point for later `/wp-admin/` coverage. Do not treat that list as permanently one screen.
 
 ## Fonts
 
@@ -51,7 +51,7 @@ License notes for bundled faces: [`assets/fonts/NOTICE`](assets/fonts/NOTICE).
 
 ## Bristlecone menu and future Markdown
 
-This plugin registers a top-level **Bristlecone** menu (slug `bristlecone`, capability `manage_options`, custom bold **B** icon) only when that parent is not already present. The submenu is **Admin Styles** (page slug `bristlecone-admin-style`). The auto-duplicate “Bristlecone / Bristlecone” first submenu is removed when this plugin created the parent.
+This plugin registers a top-level **Bristlecone** menu (slug `bristlecone`, capability `manage_options`, custom bold **B** icon) only when that parent is not already present. The submenu is **Admin Styles** (page slug `bristlecone-admin-styles`). The auto-duplicate “Bristlecone / Bristlecone” first submenu is removed when this plugin created the parent.
 
 **Do not change [bits-markdown](https://github.com/Zyniker13/bits-markdown) in this repository.** When Markdown later moves off Settings → Bristlecone Markdown, it should attach like this:
 
@@ -65,7 +65,7 @@ See the comments on `Settings::register_menu()` in `includes/Settings.php`.
 
 ## Uninstall
 
-Deleting the plugin via WordPress runs `uninstall.php`, which removes `bristlecone_admin_style_settings`.
+Deleting the plugin via WordPress runs `uninstall.php`, which removes `bristlecone_admin_styles_settings`.
 
 ## License
 

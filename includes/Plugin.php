@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Bristlecone\AdminStyle;
+namespace Bristlecone\AdminStyles;
 
 /**
  * Plugin bootstrap.
  *
- * @package BristleconeAdminStyle
+ * @package BristleconeAdminStyles
  */
 final class Plugin {
 
@@ -19,9 +19,9 @@ final class Plugin {
 
 	public function init(): void {
 		load_plugin_textdomain(
-			'bristlecone-admin-style',
+			'bristlecone-admin-styles',
 			false,
-			dirname( plugin_basename( BRISTLECONE_ADMIN_STYLE_FILE ) ) . '/languages'
+			dirname( plugin_basename( BRISTLECONE_ADMIN_STYLES_FILE ) ) . '/languages'
 		);
 
 		Settings::instance()->register();
