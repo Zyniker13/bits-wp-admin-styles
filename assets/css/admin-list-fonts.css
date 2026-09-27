@@ -1,0 +1,16 @@
+/**
+ * Posts → All Posts list-table typography.
+ *
+ * font-family is applied via wp_add_inline_style from the PHP allowlist.
+ * Do not target #adminmenu, #wpadminbar, or the front end.
+ */
+body.wp-admin.post-type-post .wp-list-table,
+body.wp-admin.post-type-post .wp-list-table th,
+body.wp-admin.post-type-post .wp-list-table td,
+body.wp-admin.post-type-post .wp-list-table .row-title,
+body.wp-admin.post-type-post .wp-list-table .column-title strong,
+body.wp-admin.post-type-post .wp-list-table .row-actions,
+body.wp-admin.post-type-post .wp-list-table .row-actions a {
+	/* font-family is applied via wp_add_inline_style from the PHP allowlist. */
+	font-family: inherit;
+}

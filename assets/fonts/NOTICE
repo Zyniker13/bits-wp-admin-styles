@@ -1,0 +1,43 @@
+Bundled webfonts
+================
+
+Bristlecone Admin Styles ships latin WOFF2 files (weights 400 and 600) so
+admin pages never require a third-party font CDN. Each family remains under
+its upstream SIL Open Font License 1.1. Full license texts are next to the
+font files.
+
+Inter
+-----
+Copyright (c) 2016 The Inter Project Authors.
+License: SIL Open Font License 1.1
+Upstream: https://github.com/rsms/inter
+Files: assets/fonts/inter/
+License text: assets/fonts/inter/LICENSE.txt
+
+Source Sans 3
+-------------
+Copyright 2010-2024 Adobe (http://www.adobe.com/), with Reserved Font Name
+'Source'.
+License: SIL Open Font License 1.1
+Upstream: https://github.com/adobe-fonts/source-sans
+Files: assets/fonts/source-sans-3/
+License text: assets/fonts/source-sans-3/LICENSE.md
+
+IBM Plex Sans
+-------------
+Copyright © 2017 IBM Corp., with Reserved Font Name "Plex".
+License: SIL Open Font License 1.1
+Upstream: https://github.com/IBM/plex
+Files: assets/fonts/ibm-plex-sans/
+License text: assets/fonts/ibm-plex-sans/LICENSE.txt
+
+IBM Plex Mono
+-------------
+Copyright © 2017 IBM Corp., with Reserved Font Name "Plex".
+License: SIL Open Font License 1.1
+Upstream: https://github.com/IBM/plex
+Files: assets/fonts/ibm-plex-mono/
+License text: assets/fonts/ibm-plex-mono/LICENSE.txt
+
+The plugin itself is GPL-2.0-or-later (see /LICENSE). The OFL font files are
+bundled as separate works and keep their OFL terms.
