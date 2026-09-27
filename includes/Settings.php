@@ -157,7 +157,10 @@ final class Settings {
 				__( 'Bristlecone', 'bristlecone-admin-style' ),
 				'manage_options',
 				$parent_slug,
-				array( $this, 'render_parent_redirect' ),
+				// Page callbacks run after admin chrome is printed, so a
+				// redirect here would be too late. Render Admin Styles so
+				// ?page=bristlecone is usable if this plugin created the parent.
+				array( $this, 'render_page' ),
 				$this->menu_icon(),
 				58
 			);
@@ -178,18 +181,6 @@ final class Settings {
 		if ( $created_parent ) {
 			remove_submenu_page( $parent_slug, $parent_slug );
 		}
-	}
-
-	/**
-	 * Top-level click lands on ?page=bristlecone; send admins to Admin Styles.
-	 */
-	public function render_parent_redirect(): void {
-		if ( ! current_user_can( 'manage_options' ) ) {
-			return;
-		}
-
-		wp_safe_redirect( admin_url( 'admin.php?page=' . self::PAGE_SLUG ) );
-		exit;
 	}
 
 	/**
